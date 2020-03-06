@@ -1,0 +1,79 @@
+.game{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./images/global/bgGame.png');
+    background-size: cover;
+    color: white;
+}
+.card, .board{
+    width: 10vw;
+    height : 14.5vw;
+    background-size: cover;
+    font-size: 24px;
+    line-height: 25vh;
+    text-align: center;
+}
+.hand{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80vw;
+}
+.player{
+    position: absolute;
+    top : 70vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.cardMinus, .cardPlus{
+    background-size: cover;
+    position: absolute;
+    left : 45vw;
+    width: 10vw;
+    margin-top : 10px;
+    text-align: center;
+    font-weight: bold;
+    color: red;
+}
+
+.cardMinus{
+    background-image: url('./images/cards/mother/dealerMinus.png');
+}
+.cardPlus{
+    background-image: url('./images/cards/mother/dealerPlus.png');
+}
+
+.start_game, .display_winner{
+    position: absolute;
+    width: 100vw;
+    text-align: center;
+    top : 40%;
+    border-top : solid white 1px;
+    border-bottom : solid white 1px;
+    font-size: 50px;
+}
+.display_winner{
+    position: absolute;
+    top : 30vh;
+    width : 100vw;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 10px;
+}
+.avatar{
+    height: 15vw;
+    width: 15vw;
+    background-size: cover;
+}
+.board{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    top : 30vh;
+    width : 100%;
+}
+.board .card {
+    border : solid white 1px
+}

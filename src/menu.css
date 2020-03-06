@@ -1,0 +1,343 @@
+/* 1 - CES LIGNES DE CODE SERVENT A MODIFIER LE MENU PRINCIPAL D'ACCES 
+AU JEU. LOGO, URL ET TOUS LES ELEMENTS LIES AU CSS (SI HTML OU JS
+VOIR LES FICHIERS AFFILIES AU TYPE DU LANGAGE. VOICI LES AJOUTS EN CSS : 
+LOGO/REDIMENSION-BG/ . */
+
+body {
+    height: 100%;
+    min-height: 1200px;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+}
+
+.App {
+    background: url("./images/global/BG1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height : 100vh;
+    width: 100vw;
+}
+.backgroundMenu{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* ###### Position de l'emplacement du bouton volume ###### */
+
+#volume {
+    height: 75px;
+    width: 75px;
+}
+
+#posvolume {
+    position: absolute;
+    left: 92%;
+    top: 50px;
+}
+
+
+/* ##### Position de l'emplacement des boutons menus, et tous les effets des boutons du menu principal ##### */
+
+#posmenu {
+    width: 10vw ;
+    height: 100px;
+    position: absolute;
+    top: 50vh;
+    left: 10vh;
+}
+
+#start,
+#tutorial,
+#bonus {
+    height: 12vh;
+    width: 30vw;
+    margin-top: 15px;
+}
+
+#start {
+    background: url("./images/global/STARTHOVER.png") no-repeat center;
+    background-size: cover;
+}
+
+#tutorial {
+    background: url("./images/global/TUTORIALHOVER.png") no-repeat center;
+    background-size: cover;
+}
+
+#bonus {
+    background: url("./images/global/BONUSHOVER.png") no-repeat center;
+    background-size: cover;
+}
+
+#bonus:hover,
+#tutorial:hover,
+#start:hover {
+    filter: drop-shadow(0 0 0.75rem rgb(119, 97, 97));
+}
+
+
+/* Ici est le style du block de la sélection du nombre de JOUEUR et du nombre de PLACE */
+
+.posBlockChoix {
+    background: url("./images/global/border1.png") no-repeat center;
+    background-size: cover;
+    color: black;
+    display: flex;
+    font-weight: bold;
+    width: 35vw;
+    height: 35vw;
+    position: absolute;
+    top: 20vh;
+    left: 40vw;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-around;
+}
+
+.posBlockChoix p {
+    font-size: 12px;
+    width: 100%;
+}
+
+
+
+/* Placement des enfants dans le bloc parent de la sélection du nombre de place et
+ de joueur selJ = bloc parent / class = fleD / fleG et ID = #nbjoueur #nbBot  */
+
+.selJ {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.fleD,
+.fleG,
+#nbJoueur,
+#nbBot {
+    width: 10vh;
+    height: 10vh;
+}
+.fleD img, 
+.fleG img {
+    width : 5vh;
+    height: 10vh;
+}
+.fleG:hover, .fleD:hover{
+    opacity : 0.90;
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+
+/* .fleD{
+    background: url('./images/global/rightarrow.png') center;
+    background-size: cover;
+} 
+ .fleG{
+    background: url("./images/global/leftarrow.png") center;
+    background-size: 50%;
+} */
+
+
+#imgYes {
+    background: url("./images/global/YES_HOVER.png")
+}
+
+#imgBack {
+    background: url("./images/global/BACK.png")
+}
+
+#imgYes:hover {
+    background: url("./images/global/yesbutton.png");
+}
+
+#imgBack:hover {
+    background: url("./images/global/BACK_HOVER.png");
+}
+#imgYes,
+#imgBack,#imgYes:hover,#imgBack:hover {
+    /* width: 55px;
+    height: 24px; */
+    width: 10vw;
+    height: 8vh;
+    background-size: cover;
+}
+
+/* PRÉCISION : la virgule permet de "regrouper" des ID (qui sont forcément uniques) et des classes pour leur appliquer un même "style" CSS  */
+
+.fleD,
+.fleG,
+#nbJoueur,
+#nbBot {
+    background-size: cover;
+}
+
+
+/* ICI SE TROUVE LE STYLE DE L'EFFET DU MENU PRINCIPAL, EN AUTRE LES PARTICULES DE POUSSIERE (ATTENTION : BEAUCOUP DE LIGNES A PRENDRE EN COMPTE, USAGE DU PARALLAXE
+DE CSS3 ONLY), QUELQUES LIGNES SE TROUVE AUSSI EN HTML POUR UNE RAISON LOGIQUE) */
+
+
+/* PRÉCISION : UL = Liste non ordonée (à puce) et OL permet de créer une liste numérotée). UL et OL sont obligatoirement utilisés avec "Li" pour permettre
+d'écrire des lignes différentes. Dans notre contexte, list-style-type : none permet de cacher les puces de l'utilisation du Ul (dans le fichier HTML) */
+
+li {
+    list-style-type: none;
+}
+
+
+/* Ceci sont les ÉLÉMENTS de l'animation de poussière ainsi que leur source (qui ne sont pas des images téléchargés, directement sous hébergeur). Animation timing est */
+
+.img {
+    position: absolute;
+    height: 100000px;
+    width: 100000px;
+    top: -8500px;
+    left: -8000px;
+    animation-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750);
+    animation-name: poussière;
+    animation-iteration-count: infinite;
+}
+
+#img-1 {
+    opacity: 0.25;
+    background: url('https://image.ibb.co/jcTvpv/dust1.jpg');
+    background-repeat: repeat;
+    animation-duration: 600s;
+}
+
+#img-2 {
+    opacity: 0.2;
+    background: url('https://image.ibb.co/goU1Uv/dust2.jpg');
+    background-repeat: repeat;
+    animation-duration: 450s;
+}
+
+#img-3 {
+    opacity: 0.15;
+    background: url('https://image.ibb.co/cymRwa/dust3.jpg');
+    background-repeat: repeat;
+    animation-duration: 350s;
+}
+
+
+/*ANIMATIONS (twinkle n'a pas d'utilité apparente, pour l'instant. A coder en JS)*/
+
+@keyframes twinkle {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    30% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.75;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        transform: translate(175px, 100px);
+    }
+}
+
+
+/* PRÉCISION : 0% est le début de l'animation des 3 images et transform: translate permet de choisir le MOUVEMENT de l'animation.
+
+(NOTE : l'animation est à prendre du même sens que l'axe des ordonnées x et y (x = -gauche à droite) (y = bas à haut). C'est-à-dire si nous ne précisons seulement 0px, 0px : nous 
+irons de droite jusqu'en bas MAIS si on précise moins, comme ceci -0px, -0px nous irons de gauche et en haut. La première valeur prend en compte l'axe et la dernière, les ordonnées)
+
+100% est du coup le point d'arrivé de l'animation, juste en haut nous précisons "repeat" pour que l'animation soit en continue en dupliquant les images 1,2 et 3. dans .img
+ (qui est énorme pour que l'animation ne s'arrête jamais et pour les img1, img2 et img3 permettent de créer une boucle infinie) donc permet de créer l'animation de poussière */
+
+@keyframes poussière {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    100% {
+        transform: translate(8000px, 4000px);
+    }
+}
+
+
+/* FIN DE L'ANIMATION DES PARTICULES */
+
+
+
+/* #titre{
+  animation-fill-mode: forwards;
+  background  : url('./images/global/bgtransition2.png') no-repeat center;
+  background-size: cover;
+
+
+visibility: hidden;
+
+
+height: 1000px;
+  width: 100%;
+  animation-name: transiTitre;
+  animation-delay: 5s;
+  animation-duration: 5s;
+}
+#rouge{
+  animation-fill-mode: forwards;
+  background  : url('./images/global/bgtransition1.png') no-repeat center;
+  background-size: cover;
+  height: inherit;
+  animation-name: transiRouge;
+  animation-duration: 5s;
+  }
+
+
+#newOne{
+    animation-fill-mode: forwards;
+    visibility: hidden;
+    animation-name: appear;
+    animation-delay: 10s;
+    animation-duration: 0s;
+} */
+ 
+/* @keyframes transiRouge {
+    0% {
+        visibility: visible;
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+    50% {
+        visibility: visible;
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes transiTitre {
+    0% {
+        visibility: visible;
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes appear {
+    0% {
+        transform: translate(0px, 0px);
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+} */

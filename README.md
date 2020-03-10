@@ -1,3 +1,6 @@
+## npm install react-router
+## npm install react-player
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
